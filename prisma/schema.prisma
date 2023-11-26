@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+type ResumeEducationDetails {
+  course    String
+  endYear   String
+  grades    String
+  institute String
+  location  String
+  startYear String
+}
+
+type ResumeJobExperience {
+  currentlyWorking Boolean?
+  endDate          String?
+  orgName          String
+  role             String
+  startDate        String
+}
+
+type ResumePersonalDetails {
+  about    String
+  contact  String
+  email    String
+  fullName String
+  github   String
+  linkedIn String
+  location String
+}
+
+type ResumeSkills {
+  comments String
+  name     String
+  rating   Int
+}
+
+model resume {
+  id               String                   @id @default(auto()) @map("_id") @db.ObjectId
+  educationDetails ResumeEducationDetails[]
+  jobExperience    ResumeJobExperience[]
+  personalDetails  ResumePersonalDetails
+  skills           ResumeSkills[]
+}
