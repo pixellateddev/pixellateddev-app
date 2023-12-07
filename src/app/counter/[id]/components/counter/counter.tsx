@@ -28,7 +28,7 @@ const Counter: FC<Props> = ({ counter }) => {
         <div className={classes.container}>
             <div>{days} Day{days !== 1 && 's'}</div>
             <div>{hours} Hour{hours !== 1 && 's'}</div>
-            <div>{minutes} Minutes{minutes !== 1 && 's'}</div>
+            <div>{minutes} Minute{minutes !== 1 && 's'}</div>
             <div>{seconds} Second{seconds !== 1 && 's'}</div>
         </div>
     )
