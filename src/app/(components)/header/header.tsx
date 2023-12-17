@@ -5,7 +5,7 @@ import classes from './header.module.scss'
 const Header: FC = () => {
     return (
        <header className={classes.header}>
-        <Image src='/logo.svg' alt="logo"  height={50} width={150}/>
+        <Image src='/logo.svg' alt="logo"  height={40} width={250}/>
        </header>
     )
 
