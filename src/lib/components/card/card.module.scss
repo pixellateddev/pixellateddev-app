@@ -1,0 +1,15 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+
+  .head {
+    border-bottom: 1px solid #ebebeb;
+    padding: 0.5em 1em;
+  }
+
+  .body {
+    padding: 0.5em 1em;
+  }
+}

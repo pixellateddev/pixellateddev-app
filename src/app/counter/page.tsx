@@ -1,19 +1,17 @@
+import { Card } from '@/lib/components'
 import prisma from '@/lib/db'
-import { Button } from 'antd'
 import { NextPage } from 'next'
+import { Empty } from 'antd'
 import Link from 'next/link'
 
 const Page: NextPage = async () => {
   const counters = await prisma.counter.findMany()
   return (
-    <div>
-      {counters.map((counter) => (
-        <div key={counter.id}>
-          <Link href={`/counter/${counter.id}`}>{counter.name}</Link>
-        </div>
-      ))}
-      <Button>Hello</Button>
-    </div>
+    <Card title='My Counters'>
+      <div>
+        <Empty description='No Counters Found. Please Create a new counter' />
+      </div>
+    </Card>
   )
 }
 

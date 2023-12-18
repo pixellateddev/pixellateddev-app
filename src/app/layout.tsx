@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <AntdProvider>
           <Header />
-          {children}
+          <main className='main'>{children}</main>
         </AntdProvider>
       </body>
     </html>
