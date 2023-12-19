@@ -40,16 +40,20 @@ type ResumeSkills {
   rating   Int
 }
 
-model resume {
+model Counter {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  startTime DateTime @db.Date
+
+  @@map("counter")
+}
+
+model Resume {
   id               String                   @id @default(auto()) @map("_id") @db.ObjectId
   educationDetails ResumeEducationDetails[]
   jobExperience    ResumeJobExperience[]
   personalDetails  ResumePersonalDetails
   skills           ResumeSkills[]
-}
 
-model counter {
-  id              String                    @id @default(auto()) @map("_id") @db.ObjectId
-  name            String
-  startTime       DateTime                  @default(now())
+  @@map("resume")
 }
